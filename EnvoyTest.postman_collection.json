@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "a8d337bb-5132-4571-b7d8-73ee31eb6edc",
+		"name": "EnvoyTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "628765"
+	},
+	"item": [
+		{
+			"name": "Get Cars with Valid Auth over HTTP",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pa55w0rd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "gareth",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/c/random",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"c",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars with No Auth over HTTP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/c/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"c",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person with Valid Auth over HTTP",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pa55w0rd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "gareth",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/p/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"p",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person with Invalid Auth over HTTP",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/p/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"p",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person with Invalid Auth over HTTPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:10000/p/id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"p",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person with Valid Auth over HTTPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pa55w0rd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "gareth",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:10000/p/id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"p",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars API direct / not envoy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/random",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
